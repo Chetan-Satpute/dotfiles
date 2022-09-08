@@ -1,0 +1,10 @@
+[user]
+	name = Chetan Satpute
+	email = chetan.satpute2002@gmail.com
+	signingkey = 8313639EEF239BA2DA3A4EB6E2A8813EAABCD0C9
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[commit]
+	gpgSign = true
