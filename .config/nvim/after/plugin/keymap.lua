@@ -1,11 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set('n', '<leader>e', '<cmd>e<CR>', opts)
-vim.keymap.set('n', '<leader>y', "\"+y<CR>", opts)
-vim.keymap.set('v', '<leader>y', "\"+y<CR>", opts)
-vim.keymap.set('n', '<leader>p', "\"+p<CR>", opts)
-vim.keymap.set('n', '<leader>s', "<cmd>w<CR>", opts)
-
 -- Telescope
 vim.keymap.set('n', '<C-p>', "<cmd>Telescope find_files<CR>", opts)
 

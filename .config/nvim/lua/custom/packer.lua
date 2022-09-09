@@ -7,6 +7,7 @@ return require("packer").startup(function(use)
 
 	-- Theme
 	use("folke/tokyonight.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Status line
 	use({
@@ -42,6 +43,10 @@ return require("packer").startup(function(use)
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter")
 
-  -- Dev Icons
-  use('kyazdani42/nvim-web-devicons')
+	-- Dev Icons
+	use("kyazdani42/nvim-web-devicons")
+
+	-- Git signs
+	use("lewis6991/gitsigns.nvim")
 end)
+
