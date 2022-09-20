@@ -27,6 +27,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/.local/scripts
 
 . "$HOME/.cargo/env"
 

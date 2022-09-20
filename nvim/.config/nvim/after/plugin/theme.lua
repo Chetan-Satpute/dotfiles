@@ -40,7 +40,10 @@ vim.g.tokyonight_style = "night"
 vim.opt.background = "dark"
 ]]
 
+local mocha = require("catppuccin.palettes").get_palette "mocha"
+
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+
 
 require("catppuccin").setup({
 	integrations = {
@@ -64,6 +67,11 @@ require("catppuccin").setup({
 				warnings = { "underline" },
 				information = { "underline" },
 			},
+		},
+	},
+  highlight_overrides = {
+		mocha = {
+			WinSeparator = { bg = "NONE", fg = mocha.blue },
 		},
 	},
 })

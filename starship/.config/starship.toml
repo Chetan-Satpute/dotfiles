@@ -1,0 +1,7 @@
+
+[cmd_duration]
+disabled = true
+
+[character]
+error_symbol = "[❯](bold green)"
+

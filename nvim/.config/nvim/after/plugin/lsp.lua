@@ -30,7 +30,7 @@ local servers = {
 	"tsserver",
 	"clangd",
 	"rust_analyzer",
-  "gopls"
+  "gopls",
 }
 
 local enhance_server_opts = {

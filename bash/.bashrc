@@ -116,6 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Key bindingd
+bind '"":"project-opener\n"'
+
 # Alias
 alias tmux='tmux -u'
 

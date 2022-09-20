@@ -40,6 +40,9 @@ return require("packer").startup(function(use)
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-fzy-native.nvim")
 
+  -- Vim Be Good
+  use("ThePrimeagen/vim-be-good")
+
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter")
 
