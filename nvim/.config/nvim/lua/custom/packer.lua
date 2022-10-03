@@ -10,10 +10,7 @@ return require("packer").startup(function(use)
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Status line
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
+	use("nvim-lualine/lualine.nvim")
 
 	-- Lsp
 	use("williamboman/mason.nvim")
@@ -52,8 +49,4 @@ return require("packer").startup(function(use)
 
 	-- Git signs
 	use("lewis6991/gitsigns.nvim")
-
-	-- TODO Highlight
-	use("folke/todo-comments.nvim")
 end)
-

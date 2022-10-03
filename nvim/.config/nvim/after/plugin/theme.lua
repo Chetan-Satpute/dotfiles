@@ -3,7 +3,7 @@ require("tokyonight").setup({
 	-- your configuration comes here
 	-- or leave it empty to use the default settings
 	style = "night", -- The theme comes in three styles, `storm`, a darker variant `night` and `day`
-	transparent = false, -- Enable this to disable setting the background color
+	transparent = true, -- Enable this to disable setting the background color
 	terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
 	styles = {
 		-- Style to be applied to different syntax groups
@@ -38,6 +38,8 @@ require("tokyonight").setup({
 
 vim.g.tokyonight_style = "night"
 vim.opt.background = "dark"
+
+vim.cmd("colorscheme tokyonight")
 ]]
 
 local mocha = require("catppuccin.palettes").get_palette "mocha"
@@ -77,4 +79,5 @@ require("catppuccin").setup({
 	},
 })
 
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd("colorscheme catppuccin")
+

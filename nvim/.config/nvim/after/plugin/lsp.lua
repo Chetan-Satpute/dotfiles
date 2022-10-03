@@ -1,5 +1,17 @@
-local util = require("vim.lsp.util")
 local lspconfig = require("lspconfig")
+
+-- LSP Formatting
+local lsp_formatting = function(bufnr)
+	vim.lsp.buf.format({
+		filter = function(client)
+			return client.name == "null-ls"
+		end,
+		bufnr = bufnr,
+	})
+end
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -19,10 +31,8 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+	vim.keymap.set("n", "<leader>f", lsp_formatting, bufopts)
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 local servers = {
 	"sumneko_lua",
@@ -30,7 +40,7 @@ local servers = {
 	"tsserver",
 	"clangd",
 	"rust_analyzer",
-  "gopls",
+	"gopls",
 }
 
 local enhance_server_opts = {
@@ -53,11 +63,7 @@ local enhance_server_opts = {
             }
         }
     end,
-    -- Provide settings that should only apply to the "emmet_ls" server
-    ["emmet_ls"] = function(opts)
-        opts.filetypes = {"html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less"}
-    end
-]]
+  ]]
 }
 
 for _, name in pairs(servers) do
@@ -74,45 +80,16 @@ for _, name in pairs(servers) do
 	lspconfig[name].setup(opts)
 end
 
---[[
---
--- TODO: Use this in neovim 0.8
---
-local lsp_formatting = function(bufnr)
-    vim.lsp.buf.format({
-        filter = function(client)
-            -- apply whatever logic you want (in this example, we'll only use null-ls)
-            return client.name == "null-ls"
-        end,
-        bufnr = bufnr,
-    })
-end
-]]
-
-local lsp_formatting = function(client, bufnr)
-	vim.keymap.set("n", "<leader>f", function()
-		local params = util.make_formatting_params({})
-		client.request("textDocument/formatting", params, nil, bufnr)
-	end, { buffer = bufnr })
-end
-
 -- null-ls
-
 local null_ls = require("null-ls")
 
 null_ls.setup({
-
-	on_attach = function(client, bufnr)
-		lsp_formatting(client, bufnr)
-		on_attach(client, bufnr)
-	end,
-
+	on_attach = on_attach,
 	sources = {
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.clang_format,
 		null_ls.builtins.formatting.rustfmt,
 		null_ls.builtins.formatting.gofmt,
-		-- null_ls.builtins.diagnostics.eslint_d,
 	},
 })

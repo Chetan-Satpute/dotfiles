@@ -123,6 +123,7 @@ bind '"":"project-opener\n"'
 alias tmux='tmux -u'
 
 eval "$(starship init bash)"
+
 . "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.nvm"
