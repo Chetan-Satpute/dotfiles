@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+SELECTED=$(find ~/Github/ ~/Learn/ -mindepth 1 -maxdepth 1 | fzf);
+PROJECT_NAME=$(basename $SELECTED);
+
+tmux start-server;
+
+if ! $(tmux has-session -t $PROJECT_NAME); then
+  tmux -u new-session -c $SELECTED -s $PROJECT_NAME -d
+fi
+
+if ! $(tmux -u attach-session -t $PROJECT_NAME); then
+  tmux -u switch-client -t $PROJECT_NAME 
+fi
+
