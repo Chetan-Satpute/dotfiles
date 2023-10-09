@@ -8,7 +8,7 @@ require("mason-lspconfig").setup_handlers({
 	-- a dedicated handler.
 	function(server_name) -- default handler (optional)
 		require("lspconfig")[server_name].setup({
-            capabilities = capabilities,
+			capabilities = capabilities,
 			settings = servers[server_name],
 		})
 	end,
@@ -43,3 +43,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 	end,
 })
+
+local border = {
+	{ "🭽", "FloatBorder" },
+	{ "▔", "FloatBorder" },
+	{ "🭾", "FloatBorder" },
+	{ "▕", "FloatBorder" },
+	{ "🭿", "FloatBorder" },
+	{ "▁", "FloatBorder" },
+	{ "🭼", "FloatBorder" },
+	{ "▏", "FloatBorder" },
+}
+
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border or border
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+

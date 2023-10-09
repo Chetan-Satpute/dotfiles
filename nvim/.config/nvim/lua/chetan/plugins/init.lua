@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	{ "rebelot/kanagawa.nvim" },
+	{ "catppuccin/nvim", name = "catppuccin", lazy = false },
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -31,19 +32,31 @@ local plugins = {
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "windwp/nvim-ts-autotag" },
 	{ "lewis6991/gitsigns.nvim" },
-	{ "tpope/vim-fugitive" },
+	{ "tpope/vim-fugitive", lazy = false },
 	{ "nvim-lualine/lualine.nvim" },
+	{
+		"nvim-tree/nvim-tree.lua",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
 }
 
-local opts = {}
+local opts = {
+	defaults = {
+		lazy = true,
+	},
+}
 
 require("lazy").setup(plugins, opts)
 
-require("chetan.plugins.kanagawa")
-require("chetan.plugins.telescope")
-require("chetan.plugins.treesitter")
-require("chetan.plugins.mason")
-require("chetan.plugins.conform")
-require("chetan.plugins.cmp")
-require("chetan.plugins.gitsigns")
-require("chetan.plugins.lualine")
+require("chetan.plugins.configs.kanagawa")
+require("chetan.plugins.configs.telescope")
+require("chetan.plugins.configs.treesitter")
+require("chetan.plugins.configs.mason")
+require("chetan.plugins.configs.conform")
+require("chetan.plugins.configs.cmp")
+require("chetan.plugins.configs.gitsigns")
+require("chetan.plugins.configs.lualine")
+require("chetan.plugins.configs.nvim_tree")
