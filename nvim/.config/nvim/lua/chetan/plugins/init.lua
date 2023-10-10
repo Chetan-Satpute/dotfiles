@@ -41,6 +41,10 @@ local plugins = {
 			"nvim-tree/nvim-web-devicons",
 		},
 	},
+	{
+		"numToStr/Comment.nvim",
+		lazy = false,
+	},
 }
 
 local opts = {
@@ -60,3 +64,4 @@ require("chetan.plugins.configs.cmp")
 require("chetan.plugins.configs.gitsigns")
 require("chetan.plugins.configs.lualine")
 require("chetan.plugins.configs.nvim_tree")
+require("chetan.plugins.configs.comment")
