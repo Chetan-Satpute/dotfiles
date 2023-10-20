@@ -22,3 +22,6 @@ vim.keymap.set("n", "<leader>b", telescope.buffers)
 
 -- Nvim Tree
 vim.keymap.set("n", "<leader>e", "<cmd> NvimTreeFocus <CR>")
+
+-- Custom
+vim.keymap.set("n", "<leader>w", "<c-w>")

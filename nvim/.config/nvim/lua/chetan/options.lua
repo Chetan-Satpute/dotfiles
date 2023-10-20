@@ -14,3 +14,5 @@ vim.opt.incsearch = true
 vim.opt.smartindent = true
 vim.opt.signcolumn = "yes"
 vim.opt.laststatus=3
+
+vim.opt.diffopt = vim.opt.diffopt + "vertical"
