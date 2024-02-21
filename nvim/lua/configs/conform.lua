@@ -6,6 +6,8 @@ require("conform").setup({
 		typescript = { "prettier" },
 		javascriptreact = { "prettier" },
 		typescriptreact = { "prettier" },
+		html = { "prettier" },
+		css = { "prettier" },
 		-- Use the "*" filetype to run formatters on all filetypes.
 		["*"] = {},
 		-- Use the "_" filetype to run formatters on filetypes that don't
