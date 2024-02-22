@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	-- Theme
 	{ "rebelot/kanagawa.nvim", lazy = false },
+	{ "folke/tokyonight.nvim", lazy = false },
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -27,7 +28,7 @@ local plugins = {
 	{ "hrsh7th/cmp-buffer" },
 	{ "hrsh7th/cmp-path" },
 	{ "hrsh7th/nvim-cmp" },
-	{ "L3MON4D3/LuaSnip" },
+	{ "L3MON4D3/LuaSnip", dependencies = { "rafamadriz/friendly-snippets" } },
 	{ "saadparwaiz1/cmp_luasnip" },
 
 	-- Git
