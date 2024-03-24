@@ -1,4 +1,3 @@
--- Set up nvim-cmp.
 local cmp = require("cmp")
 
 local lsp_symbols = {
@@ -83,11 +82,8 @@ cmp.setup({
 		format = format_function,
 	},
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-	}, {
-		{ name = "buffer" },
 	}),
 })
 
-require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/snippets" } })

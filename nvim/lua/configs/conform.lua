@@ -1,4 +1,6 @@
-require("conform").setup({
+local conform = require("conform")
+
+conform.setup({
 	-- Map of filetype to formatters
 	formatters_by_ft = {
 		lua = { "stylua" },
@@ -15,3 +17,11 @@ require("conform").setup({
 		["_"] = {},
 	},
 })
+
+local M = {}
+
+M.conform_format = function()
+	conform.format({ lsp_fallback = true })
+end
+
+return M

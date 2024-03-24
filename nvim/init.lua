@@ -1,8 +1,8 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-require 'plugins'
-require 'lsp'
-require 'keymaps'
-require 'options'
-
+require("plugins")
+require("configs")
+require("lsp")
+require("keymaps")
+require("options")

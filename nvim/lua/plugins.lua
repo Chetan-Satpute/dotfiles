@@ -29,7 +29,7 @@ local plugins = {
 	{ "hrsh7th/cmp-path" },
 	{ "hrsh7th/nvim-cmp" },
 	{ "L3MON4D3/LuaSnip", dependencies = { "rafamadriz/friendly-snippets" } },
-	{ "saadparwaiz1/cmp_luasnip" },
+	{ "saadparwaiz1/cmp_luasnip", lazy = false },
 
 	-- Git
 	{ "lewis6991/gitsigns.nvim" },
@@ -55,12 +55,3 @@ local opts = {
 }
 
 require("lazy").setup(plugins, opts)
-
-require("configs.kanagawa")
-require("configs.lualine")
-require("configs.treesitter")
-require("configs.telescope")
-require("configs.mason")
-require("configs.gitsigns")
-require("configs.comment")
-require("configs.conform")
