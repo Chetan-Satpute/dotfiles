@@ -3,13 +3,14 @@
     "snippets": [
       {
         "language": [
-          "javascript",
-          "javascriptreact",
           "typescript",
-          "typescriptreact",
-          "lua"
+          "typescriptreact"
         ],
-        "path": "./snippet.json"
+        "path": "./src/typescript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./src/typescriptreact.json"
       }
     ]
   }

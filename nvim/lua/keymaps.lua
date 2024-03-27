@@ -1,5 +1,5 @@
-local configs = require('configs');
-local luasnip = require('luasnip');
+local configs = require("configs")
+local luasnip = require("luasnip")
 
 -- Telescope
 local telescope = require("telescope.builtin")
@@ -21,9 +21,13 @@ vim.keymap.set("n", "<leader>f", configs.conform_format)
 vim.keymap.set("n", "<leader>w", "<c-w>")
 vim.keymap.set("n", "<leader>s", "<cmd>w<cr>")
 
-vim.keymap.set("n", "<leader>j", "<cmd>lnext<cr>");
-vim.keymap.set("n", "<leader>k", "<cmd>lprev<cr>");
+vim.keymap.set("n", "<leader>j", "<cmd>lnext<cr>")
+vim.keymap.set("n", "<leader>k", "<cmd>lprev<cr>")
 
-vim.keymap.set({"i"}, "<C-K>", function() luasnip.expand() end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-L>", function() luasnip.jump( 1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-J>", function() luasnip.jump(-1) end, {silent = true})
+vim.keymap.set({ "i", "s" }, "<Tab>", function()
+	luasnip.jump(1)
+end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+	luasnip.jump(-1)
+end, { silent = true })
+
