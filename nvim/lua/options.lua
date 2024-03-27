@@ -20,3 +20,6 @@ vim.opt.diffopt = vim.opt.diffopt + "vertical"
 
 vim.opt.laststatus = 3
 
+vim.o.incsearch = true
+vim.o.hlsearch = false
+
