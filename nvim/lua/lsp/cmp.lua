@@ -82,6 +82,7 @@ cmp.setup({
 		format = format_function,
 	},
 	sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
 		{ name = "luasnip" },
 	}),
 })
