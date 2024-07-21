@@ -4,8 +4,7 @@ local luasnip = require("luasnip")
 -- Telescope
 local telescope = require("telescope.builtin")
 
-vim.keymap.set("n", "<C-p>", telescope.git_files)
-vim.keymap.set("n", "<leader>ff", telescope.find_files, {})
+vim.keymap.set("n", "<C-p>", telescope.find_files)
 vim.keymap.set("n", "<leader>lg", telescope.live_grep, {})
 
 -- LSP
@@ -23,11 +22,4 @@ vim.keymap.set("n", "<leader>s", "<cmd>w<cr>")
 
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<cr>")
 vim.keymap.set("n", "<leader>k", "<cmd>lprev<cr>")
-
-vim.keymap.set({ "i", "s" }, "<Tab>", function()
-	luasnip.jump(1)
-end, { silent = true })
-vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
-	luasnip.jump(-1)
-end, { silent = true })
 

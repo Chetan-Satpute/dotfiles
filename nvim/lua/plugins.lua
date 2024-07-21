@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	-- Theme
+	{ "oxfist/night-owl.nvim", lazy = false },
 	{ "rebelot/kanagawa.nvim", lazy = false },
 	{ "folke/tokyonight.nvim", lazy = false },
 	{
