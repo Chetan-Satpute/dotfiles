@@ -1,4 +1,4 @@
-require('telescope').setup({
+return {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
@@ -26,4 +26,4 @@ require('telescope').setup({
     -- }
     -- please take a look at the readme of the extension you want to configure
   }
-})
+}

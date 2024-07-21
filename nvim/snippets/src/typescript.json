@@ -1,7 +1,0 @@
-{
-  "consoleLog": {
-    "description": "Console log",
-    "prefix": "cl",
-    "body": "console.log($0);"
-  }
-}
