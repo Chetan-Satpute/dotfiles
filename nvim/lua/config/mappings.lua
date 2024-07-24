@@ -1,9 +1,7 @@
-vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Leader w to run window commands" })
-
 -- Conform
-vim.keymap.set("n", "<leader>fm", function()
-	require("conform").format({ lsp_fallback = true })
-end)
+local conform = require("conform")
+
+vim.keymap.set("n", "<leader>fm", conform.format)
 
 -- Telescope
 local telescope = require("telescope.builtin")
@@ -17,3 +15,5 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 
+-- Custom
+vim.keymap.set("n", "<leader>w", "<C-w>")
