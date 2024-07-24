@@ -17,3 +17,4 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 
 -- Custom
 vim.keymap.set("n", "<leader>w", "<C-w>")
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeOpen<cr>")
