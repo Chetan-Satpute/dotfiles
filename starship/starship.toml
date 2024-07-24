@@ -1,19 +1,12 @@
-format = """$username\ 
-$hostname\ 
-$localip\ 
+format = """$character"""
+
+right_format = """\
 $directory\ 
-$git_branch\ 
-$git_commit\ 
-$git_state\ 
-$git_metrics\ 
-$git_status
-$character
+$git_branch\
+$git_status\
 """
 
-[cmd_duration]
-disabled = true
-
 [character]
-success_symbol = '[➜](bold green)'
-error_symbol = '[➜](bold green)'
+success_symbol = '[λ](green)'
+error_symbol = '[λ](green)'
 
