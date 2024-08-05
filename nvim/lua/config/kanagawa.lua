@@ -1,4 +1,4 @@
-vim.cmd("colorscheme kanagawa-dragon")
+vim.cmd("colorscheme kanagawa")
 
 return {
     compile = false, -- enable compiling the colorscheme
