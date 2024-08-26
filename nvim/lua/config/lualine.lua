@@ -1,4 +1,4 @@
-local colors = require("kanagawa.colors").setup()
+local colors = require("kanagawa.colors").setup({ theme = "wave" })
 local palette_colors = colors.palette
 local theme_colors = colors.theme
 
