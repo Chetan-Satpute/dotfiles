@@ -3,4 +3,4 @@ require("config.lazy")
 require("config.lsp")
 require("config.mappings")
 
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme kanagawa-dragon")
