@@ -48,3 +48,13 @@ vim.opt.cursorline = true
 -- Set highlight on search
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+
+-- Change character for diagnostic message
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '~', -- Could be '●', '▎', 'x'
+  }
+})
+
+-- Open fugitive diff in vertical split
+vim.opt.diffopt:append("vertical")

@@ -1,7 +1,12 @@
 return {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = function()
-        return require("config.telescope")
-    end,
+    opts = {
+        defaults = {
+            prompt_prefix = "   ",
+            selection_caret = "  ",
+            entry_prefix = "  ",
+            layout_strategy = "horizontal",
+        },
+    },
 }
